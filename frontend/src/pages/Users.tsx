@@ -55,6 +55,16 @@ const validationSchema = yup.object({
   permissions: yup.array().of(yup.string()).min(1, 'At least one permission is required'),
 });
 
+const roles = ['Admin', 'Loan Officer', 'Data Entry', 'View Only'];
+const permissions = [
+  'manage_users',
+  'view_reports',
+  'manage_loans',
+  'manage_clients',
+  'manage_payments',
+  'export_data',
+];
+
 // Sample data
 const initialUsers: User[] = [
   {
@@ -117,16 +127,6 @@ const initialActivities: UserActivity[] = [
     details: 'Created new loan application',
     timestamp: '2024-03-15T08:45:00',
   },
-];
-
-const roles = ['Admin', 'Loan Officer', 'Data Entry', 'View Only'];
-const permissions = [
-  'manage_users',
-  'view_reports',
-  'manage_loans',
-  'manage_clients',
-  'manage_payments',
-  'export_data',
 ];
 
 export default function Users() {
